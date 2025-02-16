@@ -1,5 +1,11 @@
+const { getRandomWeatherReport, getRandomNumber, WeatherConditions } = require("../../utils/weatherGenerator");
+
 describe("Tests for the weather generator", () => {
     test("Tests that the getRandomWeatherReport generates a proper weather report", () => {
+        const randomReport = getRandomWeatherReport();
+
+        expect(typeof randomReport.temperature).toBe('number');
+        expect(Object.values(WeatherConditions)).toContain(randomReport.weatherCondition)
 
     });
 
